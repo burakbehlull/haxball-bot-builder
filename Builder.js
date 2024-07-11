@@ -114,3 +114,70 @@ class Haxball {
         document.title = this.roomName
     }
 }
+
+class HaxballUtils {
+    constructor(room_client){
+        if(!room_client){
+            console.log('Room Client is undefined')
+            return
+        }
+        this.room = room_client
+    }
+    Announcement(text, ...props){
+        return this.room.sendAnnouncement(text, props)
+    }
+    Kick(playerId, text, isBan=false){
+        return this.room.kickPlayer(playerId, text, isBan)
+    }
+    PlayerList(){
+        return this.room.getPlayerList()
+    }
+    SetAdmin(playerId, isAdmin){
+        this.room.setPlayerAdmin(playerId, isAdmin)
+    }
+    StartGame(){
+        this.room.startGame()
+    }
+    StopGame(){
+        this.room.stopGame()
+    }
+    Message(text, ...props){
+        this.room.sendChat(text, props)
+    }
+    ClearBans(){
+        this.room.clearBans()
+    }
+    SetScoreLimit(limit){
+        this.room.setScoreLimit(limit)
+    }
+    SetTimeLimit(limit){
+        this.room.setTimeLimit(limit)
+    }
+    SetCustomStadium(stadium){
+        this.room.setCustomStadium(stadium)
+    }
+    SetDefaultStadium(stadium){
+        this.room.setDefaultStadium(stadium)
+    }
+    SetPassword(password){
+        this.room.setPassword(password)
+    }
+    SetTeamsLock(isLock=false){
+        this.room.setTeamsLock(isLock)
+    }
+    SetPlayerAvatar(playerId, avatar,...props){
+        this.room.setPlayerAvatar(playerId, avatar, props)
+    }
+    GetBallPosition(){
+        return this.room.getBallPosition()
+    }
+    GetScores(){
+        return this.room.getScores()
+    }
+    SetTeamColors(...props){
+        return this.room.setTeamColors(props)
+    }
+    StartRecording(){
+        this.room.startRecording()
+    }
+}
