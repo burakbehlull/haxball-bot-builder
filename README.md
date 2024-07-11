@@ -6,7 +6,7 @@
 | Join | Runs when user logs in | onPlayerJoin | 
 | Leave | Runs when user logs out | onPlayerLeave | 
 | Chat | Works when chat is typed | onPlayerChat | 
-| Kicked | Runs when user is kicked | onPlayerChat | 
+| Kicked | Runs when user is kicked | onPlayerKicked | 
 | BallKick | when the ball is kicked | onPlayerBallKick | 
 | Start | when the game starts | onGameStart | 
 | Stop | when the game stops | onGameStop | 
@@ -54,7 +54,7 @@ bot.on(Events.Join, (player)=>{
 bot.room
 ```
 
-## HaxballUtils class
+### HaxballUtils class
 ```js
 
 const hxb = new HaxballUtils(boot.room)
