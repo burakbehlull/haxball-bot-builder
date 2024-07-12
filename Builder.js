@@ -41,8 +41,8 @@ class Haxball {
 
         this.room = HBInit({
             roomName: this.roomName,
-            maxPlayer: this.maxPlayer,
-            roomPublic: this.roomPublic,
+            maxPlayers: this.maxPlayer,
+            public: this.roomPublic,
             playerName: this.playerName,
             geo: this.geo,
             noPlayer: this.noPlayer
@@ -61,7 +61,7 @@ class Haxball {
                 this.room.onPlayerChat  = (player, msg)=> func(player, msg)
                 break;
             case 'kicked':
-                this.room.onPlayerKicked = (kickedPlayer,reason,ban,byPlayer)=> func(kickedPlayer,reason,ban,byPlayer)
+                this.room.onPlayerKicked = (...props)=> func(...props)
                 break;
             case 'ball_kick':
                 this.room.onPlayerBallKick  = (player)=> func(player)
