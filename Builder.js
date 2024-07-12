@@ -133,40 +133,40 @@ class HaxballUtils {
         return this.room.getPlayerList()
     }
     SetAdmin(playerId, isAdmin){
-        this.room.setPlayerAdmin(playerId, isAdmin)
+        return this.room.setPlayerAdmin(playerId, isAdmin)
     }
     StartGame(){
-        this.room.startGame()
+        return this.room.startGame()
     }
     StopGame(){
-        this.room.stopGame()
+        return this.room.stopGame()
     }
     Message(text, ...props){
-        this.room.sendChat(text, props)
+        return this.room.sendChat(text, props)
     }
     ClearBans(){
-        this.room.clearBans()
+        return this.room.clearBans()
     }
     SetScoreLimit(limit){
-        this.room.setScoreLimit(limit)
+        return this.room.setScoreLimit(limit)
     }
     SetTimeLimit(limit){
-        this.room.setTimeLimit(limit)
+        return this.room.setTimeLimit(limit)
     }
     SetCustomStadium(stadium){
-        this.room.setCustomStadium(stadium)
+        return this.room.setCustomStadium(stadium)
     }
     SetDefaultStadium(stadium){
-        this.room.setDefaultStadium(stadium)
+        return this.room.setDefaultStadium(stadium)
     }
     SetPassword(password){
-        this.room.setPassword(password)
+        return this.room.setPassword(password)
     }
     SetTeamsLock(isLock=false){
-        this.room.setTeamsLock(isLock)
+        return this.room.setTeamsLock(isLock)
     }
     SetPlayerAvatar(playerId, avatar,...props){
-        this.room.setPlayerAvatar(playerId, avatar, props)
+        return this.room.setPlayerAvatar(playerId, avatar, props)
     }
     GetBallPosition(){
         return this.room.getBallPosition()
@@ -178,6 +178,6 @@ class HaxballUtils {
         return this.room.setTeamColors(props)
     }
     StartRecording(){
-        this.room.startRecording()
+        return this.room.startRecording()
     }
 }
