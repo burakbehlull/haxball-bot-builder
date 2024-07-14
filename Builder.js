@@ -20,10 +20,10 @@ const Events = {
 
 class Haxball {
     constructor(roomName, botName, settings={
-        maxPlayer:undefined,
-        roomPublic:undefined,
-        geo:undefined,
-        noPlayer:undefined,
+        maxPlayer: 6,
+        roomPublic: true,
+        geo: { code: 'TR', lat: 40.9, lon: 29.1 },
+        noPlayer: false,
 
     }){
         if(!roomName || !botName) {
@@ -36,7 +36,7 @@ class Haxball {
 
         this.maxPlayer = settings.maxPlayer || 5
         this.roomPublic = settings.roomPublic || false,
-        this.geo = settings.geo || { code: 'TR', lat: 40.9, lon: 29.1 },
+        this.geo = settings.geo,
         this.noPlayer = settings.noPlayer || false
 
         this.room = HBInit({
@@ -69,28 +69,28 @@ class Haxball {
             
             // game events
             case 'start':
-                this.room.onGameStart = (props)=> func(...props)
+                this.room.onGameStart = (...props)=> func(...props)
                 break;
             case 'stop':
-                this.room.onGameStart = (props)=> func(...props)
+                this.room.onGameStart = (...props)=> func(...props)
                 break;
             case 'tick':
-                this.room.onGameTick = (props)=> func(...props)
+                this.room.onGameTick = (...props)=> func(...props)
                 break;
             case 'pause':
-                this.room.onGamePause = (props)=> func(...props)
+                this.room.onGamePause = (...props)=> func(...props)
                 break;
             case 'unpause':
-                this.room.onGameUnpause = (props)=> func(...props)
+                this.room.onGameUnpause = (...props)=> func(...props)
                 break;
             case 'activity':
-                this.room.onPlayerActivity = (props)=> func(...props)
+                this.room.onPlayerActivity = (...props)=> func(...props)
                 break;
             case 'team_change':
-                this.room.onPlayerTeamChange = (props)=> func(...props)
+                this.room.onPlayerTeamChange = (...props)=> func(...props)
                 break;
             case 'positions_reset':
-                this.room.onPositionsReset = (props)=> func(...props)
+                this.room.onPositionsReset = (...props)=> func(...props)
                 break;
             case 'team_victory':
                 this.room.onTeamVictory = (scores)=> func(scores)
